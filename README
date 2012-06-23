@@ -1,0 +1,8 @@
+To compile and run this program, you must have scala installed.
+Compile with the command $scalac bot.scala wordtree.scala
+Run with the command $scala bot
+Then just follow the instructions the program gives you.
+
+This bot will check against the dictionary built into *nix machines for words made
+from the permutations formed by the six letters a user enters for a game of
+Letterblox.
