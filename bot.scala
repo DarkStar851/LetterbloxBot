@@ -4,7 +4,7 @@ import wordtree._
 
 object bot {
   def main(args: Array[String]): Unit = {
-    val wordtree = storeWordList("/usr/share/dict/words")
+    val wordtree = storeWordList("lbwords.txt")
     val robot = new Robot
     val continueMsg = "Would you like to continue? Y/n: "
     var letters = ""
