@@ -8,7 +8,6 @@ object bot {
     val robot = new Robot
     val continueMsg = "Would you like to continue? Y/n: "
     var letters = ""
-    
     //robot.delay(100)
     println(continueMsg)
     while (userWantsMore(readChar)) {
@@ -18,7 +17,7 @@ object bot {
       for { num   <- 3 to 6 // Take only 3-6 letter words.
             combo <- letters.combinations(num)
             perm  <- combo.permutations
-            if (wordtree.findWord(perm) != null)
+            if (wordtree.findWord(perm) != null || perm.length() == 3)
       } enterWord(perm, robot)
       println(continueMsg)
     }

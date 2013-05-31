@@ -23,15 +23,17 @@ class WordTree() {
   def addWord(word: String, n: Node = null): Node = {
     var node = n
     var link = n
-
-    if (word.length == 0) return null.asInstanceOf[Node]
-    if (n == null) node = base(alphabet.indexOf(word(0)))
+    if (word.length == 0) 
+      return null.asInstanceOf[Node]
+    if (n == null) 
+      node = base(alphabet.indexOf(word(0)))
     if (word.length == 1) {
       node.endsWord = true
       return node
     }
     link = node.getLink(word(1).asInstanceOf[Char])
-    if (link != null) return addWord(word.slice(1, word.length), link)
+    if (link != null) 
+      return addWord(word.slice(1, word.length), link)
     node.addLink(word(1).asInstanceOf[Char], false)
     link = node.getLink(word(1).asInstanceOf[Char])
     addWord(word.slice(1, word.length), link)
@@ -40,12 +42,13 @@ class WordTree() {
   def findWord(word: String, n: Node = null): Node = {
     var node = n
     var link = n
-
-    if (n == null) node = base(alphabet.indexOf(word(0)))
+    if (n == null) 
+      node = base(alphabet.indexOf(word(0)))
     if (word.length == 1) 
       return if (node.endsWord) node else null.asInstanceOf[Node]
     link = node.getLink(word(1).asInstanceOf[Char])
-    if (link != null) return findWord(word.slice(1, word.length), link)
+    if (link != null) 
+      return findWord(word.slice(1, word.length), link)
     return null.asInstanceOf[Node]
   }
 }
